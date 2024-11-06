@@ -100,7 +100,8 @@ use App\Http\Controllers\InspekturRealisasiJamKerjaController;
 
 
     Route::get('/auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
-    Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+    Route::get('/auth/google/callback', [SocialiteController::class, 'callback']);
+    //Route::get('/auth/google/callback', [SocialiteController::class, 'handleProvideCallback']);
     Route::post('sign-out', [SingleSignOnController::class, 'logout'])->middleware('auth')->name('logout');
     Route::get('/auth-login', function () {
         return view('pages.auth-login', ['type_menu' => 'auth']);

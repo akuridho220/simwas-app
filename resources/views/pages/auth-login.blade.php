@@ -30,6 +30,17 @@
                         <span style="display: none;">Sign in with SSO BPS</span>
                     </div>
                 </a>
+                <a href="/auth/google" class="gsi-material-button" style="width:620; display:block">
+                    <div class="gsi-material-button-state"></div>
+                    <div class="gsi-material-button-content-wrapper">
+                        <div class="gsi-material-button-icon">
+                            <img src="/img/bps-logo.png"
+                                style="width: 24px; height: 24px; margin-right: 10px;">
+                        </div>
+                        <span class="gsi-material-button-contents">Sign in with Google</span>
+                        <span style="display: none;">Sign in with Google</span>
+                    </div>
+                </a>
             </div>
         </div>
         @include('components.flash')

@@ -1,3 +1,8 @@
+
+@php
+    use Carbon\Carbon;
+    Carbon::setLocale('id');
+@endphp
 <div class="card col-md-12 p-0 pr-2">
     <div class="card-body shadow-sm border p-4">
         <div class="h4 text-dark mb-4 d-flex align-items-center header-card">
@@ -37,7 +42,7 @@
             </tr>
             <tr>
                 <th>Tanggal Persetujuan Srikandi:</th>
-                <td>{{ $usulanSuratSrikandi->suratSrikandi[0]->tanggal_persetujuan_srikandi }}
+                <td>{{ Carbon::parse($usulanSuratSrikandi->suratSrikandi[0]->tanggal_persetujuan_srikandi)->translatedFormat('d F Y') }}
                 </td>
             </tr>
             <tr>

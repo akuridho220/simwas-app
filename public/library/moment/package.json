@@ -47,6 +47,7 @@
     },
     "license": "MIT",
     "devDependencies": {
+        "@types/node": "17.0.21",
         "benchmark": "latest",
         "coveralls": "latest",
         "cross-env": "^6.0.3",
@@ -79,8 +80,7 @@
         "rollup": "2.17.1",
         "typescript": "^1.8.10",
         "typescript3": "npm:typescript@^3.1.6",
-        "uglify-js": "latest",
-        "@types/node": "17.0.21"
+        "uglify-js": "latest"
     },
     "ender": "./ender.js",
     "dojoBuild": "package.js",
@@ -112,5 +112,8 @@
         "output": [
             "locale/*.js"
         ]
+    },
+    "dependencies": {
+        "moment": "file:"
     }
 }

@@ -154,21 +154,25 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('sekretaris.surat-srikandi.show', $usulan->id) }}"
-                                                class="btn btn-primary btn-sm">
-                                                <i class="fas fa-eye
-                                                "></i>
-                                                Lihat
-                                            </a>
-                                            @if ($usulan->status == 'disetujui')
-                                            <a href="{{ route('sekretaris.surat-srikandi.download', $usulan->id) }}"
-                                                class="btn btn-primary btn-sm" data-toggle="tooltip"
-                                                data-placement="top" title="Download Surat Srikandi">
-                                                <i class="fa-solid fa-file-pdf"></i>
-                                                Download
-                                                @endif
-
-                                        </td>
+    <a href="{{ route('pegawai.usulan-surat-srikandi.show', $usulan->id) }}"
+        class="btn btn-primary btn-sm">
+        <i class="fas fa-eye"></i> Lihat
+    </a>
+    @if ($usulan->status == 'disetujui')
+        <a href="{{ route('pegawai.usulan-surat-srikandi.download', $usulan->id) }}"
+            class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
+            title="Download Surat Srikandi">
+            <i class="fa-solid fa-file-pdf"></i> Download Doc
+        </a>
+        {{-- Add your download button for document_srikandi_pdf_path here --}}
+        @if($usulan->suratSrikandi && count($usulan->suratSrikandi) > 0)
+            <a class="badge badge-danger p-2" target="_blank"
+               href="/{{ $usulan->suratSrikandi[0]->document_srikandi_pdf_path }}">
+               <i class="fa-solid fa-file-pdf mr-1"></i>Download PDF
+            </a>
+        @endif
+    @endif
+</td>
                                         @endforeach
                                 </tbody>
                             </table>
